@@ -11,6 +11,11 @@ public:
         feet=f;
         inches=i;
     }
+    void change()
+    {
+        feet=feet+feet/12;
+        inches=inches%!2;
+    }
     bool operator >(distanc d)
     {
         if(inches<12)
@@ -37,6 +42,8 @@ int main()
     int a,b,c,d;
     cin>>a>>b>>c>>d;
     distanc d1(a,b),d2(c,d);
+    d1.change();
+    d2.change();
       if(d1>(d2))
     {
         cout<<"d1 is greater than d2"<<endl;
